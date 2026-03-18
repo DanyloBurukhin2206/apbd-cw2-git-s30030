@@ -12,7 +12,14 @@ namespace SimpleApp
             Console.WriteLine($"Miło cię poznać, {name}!");
 
             Console.WriteLine("Ile masz lat?");
-            int age = int.Parse(Console.ReadLine());
+            string ageInput = Console.ReadLine();
+
+            if (int.TryParse(ageInput, out int age)){
+            Console.WriteLine($"Wow, masz już {age} lat!");
+            }
+            else{ 
+                Console.WriteLine("Błąd: wprowadzono niepoprawny wiek.");
+            }
 
             Console.WriteLine($"Wow, masz już {age} lat!");
 
