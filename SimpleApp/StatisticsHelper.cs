@@ -8,7 +8,10 @@ namespace SimpleApp
         }
 
         public static int CalculateMin(int[] values)
-{
+{     
+     if (values == null || values.Length == 0)
+        return 0;
+        
     return 0;
 }
 
