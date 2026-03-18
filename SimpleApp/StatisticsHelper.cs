@@ -11,8 +11,15 @@ namespace SimpleApp
 {     
      if (values == null || values.Length == 0)
         return 0;
-        
-    return 0;
+    int min = values[0];
+
+    foreach (var v in values)
+    {
+        if (v < min)
+            min = v;
+    }
+
+    return min;
 }
 
         public static int CalculateMax(int[] values)
