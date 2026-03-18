@@ -45,7 +45,8 @@ namespace SimpleApp
                 return age;
             }
 
-            Console.WriteLine("Błąd: wpisz poprawny wiek.");
+            Console.WriteLine("Błąd: wpisz poprawny wiek (liczba całkowita).");
+            
             return null;
         }
     }
