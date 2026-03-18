@@ -7,6 +7,11 @@ namespace SimpleApp
             return age >= 18;
         }
 
+        public static int CalculateMin(int[] values)
+{
+    return 0;
+}
+
         public static int CalculateMax(int[] values)
 {
     if (values == null || values.Length == 0)
