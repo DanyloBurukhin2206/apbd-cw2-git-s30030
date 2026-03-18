@@ -11,15 +11,17 @@ namespace SimpleApp
 
             int? age = AskAge();
 
-            if (age != null)
-            {
-                Console.WriteLine($"Wow, masz już {age} lat!");
+            if (age != null){
+            Console.WriteLine($"Wow, masz już {age} lat!");
+
+            if (StatisticsHelper.IsAdult(age.Value)){
+            Console.WriteLine("Jesteś pełnoletni.");
             }
-
-
-            Console.WriteLine("Naciśnij dowolny klawisz, aby zakończyć...");
-            Console.ReadKey();
-        }
+            else
+            {   
+            Console.WriteLine("Nie jesteś pełnoletni.");
+            }
+} }
 
         static string AskName()
         {
