@@ -25,7 +25,7 @@ namespace SimpleApp
                 }
             }
 
-            Console.WriteLine("Naciśnij dowolny klawisz, aby zakończyć...");
+            Console.WriteLine("Naciśnij dowolny klawisz, aby zamknąć aplikację...");
             Console.ReadKey();
         }
 
