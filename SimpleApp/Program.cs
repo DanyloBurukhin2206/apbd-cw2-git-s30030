@@ -11,28 +11,34 @@ namespace SimpleApp
 
             int? age = AskAge();
 
-            if (age != null){
-            Console.WriteLine($"Wow, masz już {age} lat!");
+            if (age != null)
+            {
+                Console.WriteLine($"Wow, masz już {age} lat!");
 
-            if (StatisticsHelper.IsAdult(age.Value)){
-            Console.WriteLine("Jesteś pełnoletni.");
+                if (StatisticsHelper.IsAdult(age.Value))
+                {
+                    Console.WriteLine("Jesteś pełnoletni.");
+                }
+                else
+                {
+                    Console.WriteLine("Nie jesteś pełnoletni.");
+                }
             }
-            else
-            {   
-            Console.WriteLine("Nie jesteś pełnoletni.");
-            }
-} }
+
+            Console.WriteLine("Naciśnij dowolny klawisz, aby zakończyć...");
+            Console.ReadKey();
+        }
 
         static string AskName()
         {
             Console.WriteLine("Cześć! Jak masz na imię?");
-            return Console.ReadLine();
+            return Console.ReadLine() ?? "Nieznany";
         }
 
         static int? AskAge()
         {
             Console.WriteLine("Ile masz lat?");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
             if (int.TryParse(input, out int age))
             {
@@ -41,6 +47,14 @@ namespace SimpleApp
 
             Console.WriteLine("Błąd: wprowadzono niepoprawny wiek.");
             return null;
+        }
+    }
+
+    class StatisticsHelper
+    {
+        public static bool IsAdult(int age)
+        {
+            return age >= 18;
         }
     }
 }
